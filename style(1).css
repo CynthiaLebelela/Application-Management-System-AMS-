@@ -1,0 +1,53 @@
+body{
+    background-color:#2C3E50;
+}
+.container{
+    margin-top: 80px;
+    border-radius: 30px;
+    max-width: 800px;
+    height: fit-content;
+    background-color:#34495E;
+}
+.container  .input-group {
+    width: 250px;
+}
+.container #credentials{
+    padding: 30px;
+    margin-top: 40px;
+}
+.container #credentials  h3{
+    color: #ECF0F1;
+    margin-left: 70px;
+    padding-bottom: 20px;
+}
+.container #credentials h6 {
+    color: #ECF0F1;
+}
+.container #credentials .input-group {
+     padding-bottom: 10px;
+}
+.input-group-text img{
+    width: 20px;
+}
+.container #credentials .form-check{
+    margin-left: 110px;
+}
+.container #credentials .form-check .form-check-input{
+    border: none;
+    background-color: #369481;
+}
+.container .btn {
+    background-color:#369481;
+    border:none;
+    margin: 40px 0 0 175px;
+}
+.container .btn:hover {
+    background-color: #1ABC9C;
+}
+.container #credentials .form-check .form-check-input:hover {
+    background-color: #1ABC9C;
+}
+.apply-container h1{
+    color: #ECF0F1;
+    padding: 20px;
+}
