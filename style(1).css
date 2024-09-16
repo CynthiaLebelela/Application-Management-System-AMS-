@@ -14,6 +14,8 @@ body{
 .container #credentials{
     padding: 30px;
     margin-top: 40px;
+}.container  h1 {
+    color: #ECF0F1;
 }
 .container #credentials  h3{
     color: #ECF0F1;
@@ -39,7 +41,7 @@ body{
 .container .btn {
     background-color:#369481;
     border:none;
-    margin: 40px 0 0 175px;
+    margin: 10px 0 0 175px;
 }
 .container .btn:hover {
     background-color: #1ABC9C;
@@ -50,4 +52,14 @@ body{
 .apply-container h1{
     color: #ECF0F1;
     padding: 20px;
+}
+.container .register{
+    color: #ECF0F1;
+}
+.container .register a{
+    text-decoration: none;
+    color: #799096;
+}
+.container .register a:hover {
+    color:#d0eff7;
 }
