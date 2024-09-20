@@ -27,61 +27,62 @@
 <for>
     <div class="container ">
        <center><h1>Register</h1></center>
-       <form  class="registration">
+    <form method="POST" action="register.php">
         <div class="row">
             <div class="col-sm-5 col-md-6">
                 <div class="mb-3">
                     <label for="fullname" class="form-label">Full Name</label>
-                    <input type="email" name="fullname" class="form-control" id="exampleFormControlInput1" placeholder="Enter FullName">
+                    <input type="text" name="fullname" class="form-control" id="fullname" placeholder="Enter Full Name">
+
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Date of Birth</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter FullName">
+                    <input type="text" name="dob" class="form-control" id="exampleFormControlInput1" placeholder="Enter FullName">
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Gender</label>
-                    <select class="form-select" aria-label="Default select example">
+                    <select class="form-select" name="gender" aria-label="Default select example">
                         <option selected>Select Gender</option>
-                        <option value="1">Female</option>
-                        <option value="2">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
                     </select>
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Employee Id</label>
-                    <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Enter Employee ID">
+                    <input type="number" name="employee_id" class="form-control" id="exampleFormControlInput1" placeholder="Enter Employee ID">
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Department</label>
-                    <select class="form-select" aria-label="Default select example">
+                    <select class="form-select" name="department" aria-label="Default select example">
                         <option selected>Select Department</option>
-                        <option value="1">School Administrator</option>
-                        <option value="2">Teacher</option>
+                        <option value="School Administrator">School Administrator</option>
+                        <option value="Teacher">Teacher</option>
                     </select>
                 </div>
             </div>
             <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Email Address</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter Email">
+                    <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter Email">
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Phone Number</label>
-                    <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Enter Phone Number">
+                    <input type="number" name="phone_number" class="form-control" id="exampleFormControlInput1" placeholder="Enter Phone Number">
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter username">
+                    <input type="text" name="username" class="form-control" id="exampleFormControlInput1" placeholder="Enter username">
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="Enter Password">
+                    <input type="password" name="password" class="form-control" id="exampleFormControlInput1" placeholder="Enter Password">
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Confirm Password</label>
-                    <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="Confirm Password">
+                    <input type="password" name="confirm_password" class="form-control" id="exampleFormControlInput1" placeholder="Confirm Password">
                 </div>
             </div>
-            <button type="button" class="btn btn-success">Register</button>
+            <button type="submit" class="btn btn-primary">Register</button>
             <center><p class="register">Already have an account? <a href="admin_login.html">Login</a></p></center>
             </form>
         </div>
