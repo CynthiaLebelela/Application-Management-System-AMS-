@@ -7,11 +7,186 @@
     <title>School Approval System</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="style(1).css" rel="stylesheet" />
+    <style>
+        .btn {
+            width: 430px;
+        }
+        .col-4 h3{
+            color: #ECF0F1;
+        }
+        #personal_information, #academic_infor,#contact_infor{
+            background-color: #34495E;
+            width: 400px;
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+        #personal_information h3{
+           margin-left: -90px;
+        }
+        #personal_information .form-label {
+            margin-left: -210px;
+            color: #799096;
+            font-weight: bold;
+        }
+        #academic_infor .form-label {
+             margin-left: -130px;
+            color: #799096;
+            font-weight: bold;
+        }
+        #contact_infor .form-label {
+             margin-left: -220px;
+            color: #799096;
+            font-weight: bold;
+        }
+        .mb-3 .form-control,
+        .form-select {
+            margin-left: 25px;
+            width: 300px;
+            background-color: whitesmoke;
+            color: black;
+        }
+    </style>
 </head>
 
 <body>
     <div class="apply-container text-center">
     <h1 center>Application</h1>
+    <form method="POST" action="application_form.php"></form>
+    <div class="row">
+        <div class="col-4" id="personal_information">
+           <h3>Personal Information</h3>
+            <div class="mb-3">
+                <label for="fullname" class="form-label">Full Name</label>
+                <input type="text" name="fullname" class="form-control" id="fullname" placeholder="Enter Full Name">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Date of Birth</label>
+                <input type="date" name="dob" class="form-control" id="exampleFormControlInput1" placeholder="Enter FullName">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Gender</label>
+                <select class="form-select" name="gender" aria-label="Default select example">
+                    <option selected>Select Gender</option>
+                    <option value="Female">Female</option>
+                    <option value="Male">Male</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Race/Ethnicity</label>
+                <select class="form-select" name="gender" aria-label="Default select example">
+                    <option selected>Select Race/Ethnicity</option>
+                    <option value="African">African</option>
+                    <option value="Coloured">Coloured</option>
+                    <option value="Indian/Asian">Indian</option>
+                    <option value="White">White</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">ID Number</label>
+                <input type="number" name="id_num" class="form-control" id="exampleFormControlInput1" placeholder="Enter ID Number">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Upload Photo</label>
+                <input type="file" name="picture" class="form-control" id="exampleFormControlInput1" placeholder="Upload your recent picture">
+            </div>
+        </div>
+        <div class="col-4" id="academic_infor">
+           <h3>Academic Information</h3>
+            <div class="mb-3">
+                <label for="schoolname" class="form-label">Previous School Attended</label>
+                <input type="text" name="schoolname" class="form-control" id="schoolname" placeholder="Enter School Name">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Previous School Address</label>
+                <input type="text" name="schooladdress" class="form-control" id="schooladdress" placeholder="Enter School Address">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Current/Most Recent Grade</label>
+                <input type="text" name="recent_grade" class="form-control" id="exampleFormControlInput1" placeholder="Enter Current/Most Recent Grade">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Grade Applying for</label>
+                <select class="form-select" name="grades" aria-label="Default select example">
+                    <option selected>Select Grade</option>
+                    <option value="Grade_8">Grade 8</option>
+                    <option value="Grade_9">Grade 9</option>
+                    <option value="Grade_10">Grade 10</option>
+                    <option value="Grade_11">Grade 11</option>
+                    <option value="Grade_12">Grade 12</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Subject Stream</label>
+                <select class="form-select" name="subject" aria-label="Default select example">
+                    <option selected>Select Subject Stream</option>
+                    <option value="Math_&_Science">Math & Science</option>
+                    <option value="Math_Lit_&_History">Math Lit & History</option>
+                    <option value="Agricultural_Science">Agricultural Science</option>
+                    <option value="Agricultural_Management">Agricultural Management</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">School Activities</label>
+                <select class="form-select" name="school_activity" aria-label="Default select example">
+                    <option selected>Select one activity</option>
+                    <option value="Music">Music</option>
+                    <option value="Netball">Netball</option>
+                    <option value="Soccer">Soccer</option>
+                    <option value="Chess">Chess</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-4" id="contact_infor">
+            <h3>Contact Information</h3>
+            <div class="mb-3">
+                <label for="home_address" class="form-label">Home Address</label>
+                <input type="text" name="home_address" class="form-control" id="home_address" placeholder="Enter home address">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">City</label>
+                <input type="text" name="city" class="form-control" id="city" placeholder="Enter city,postal code and country">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email Address</label>
+                <input type="email" name="email_address" class="form-control" id="email_address" placeholder="Enter email address">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Emergercy Contact Name</label>
+                <input type="text" name="emargency_name" class="form-control" id="emargency_name" placeholder="Enter FullName">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Phone Number</label>
+                <input type="number" name="emergency_number" class="form-control" id="emergency_number" placeholder="Enter emergency number">
+            </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Relationship</label>
+            <input type="text" name="relation" class="form-control" id="relation" placeholder="Enter Relationship">
+        </div>
+        </div>
+        <div class="col-4">
+            <h3>Guardian/Parent Information</h3>
+        </div>
+        <div class="col-4">
+            <h3>References</h3>
+        </div>
+        <div class="col-4">
+            <h3>Upload Document(s)</h3>
+        </div>
     </div>
-    <div class="application-form"></div>
+    <h3>Consent and Declaration</h3>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+            I certify that all the information provided is true and correct.
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+            I agree to abide by the school <a href="rules and regulations.html" target="Blank">rules and regulations</a> of the school.
+        </label>
+    </div>
+    </div>
 </body>
+</html>
