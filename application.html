@@ -14,26 +14,28 @@
         .col-4 h3{
             color: #ECF0F1;
         }
-        #personal_information, #academic_infor,#contact_infor{
+        #personal_information, #academic_infor,#contact_infor, #guardian_infor, #references_infor, #upload_documents{
             background-color: #34495E;
             width: 400px;
             margin: 0 auto;
             border-radius: 10px;
+            margin-left: 20px;
+            margin-bottom: 30px;
         }
         #personal_information h3{
            margin-left: -90px;
         }
-        #personal_information .form-label {
+        #personal_information .form-label, #guardian_infor .form-label {
             margin-left: -210px;
             color: #799096;
             font-weight: bold;
         }
-        #academic_infor .form-label {
+        #academic_infor .form-label, #references_infor .form-label{
              margin-left: -130px;
             color: #799096;
             font-weight: bold;
         }
-        #contact_infor .form-label {
+        #contact_infor .form-label, #upload_documents .form-label  {
              margin-left: -220px;
             color: #799096;
             font-weight: bold;
@@ -44,6 +46,25 @@
             width: 300px;
             background-color: whitesmoke;
             color: black;
+        }
+        .consent{
+             background-color: #34495E;
+            width: 900px;
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+        button{
+             background-color:#369481;
+             color: #ECF0F1;
+             font-weight: medium;
+             border:none;
+             border-radius: 5px;
+             padding: 8px;
+             margin-left: 1200px;
+             margin-top: -280px;
+        }
+        button:hover {
+            background-color: #1ABC9C;
         }
     </style>
 </head>
@@ -98,7 +119,7 @@
                 <input type="text" name="schoolname" class="form-control" id="schoolname" placeholder="Enter School Name">
             </div>
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Previous School Address</label>
+                <label for="schooladdress1" class="form-label">Previous School Address</label>
                 <input type="text" name="schooladdress" class="form-control" id="schooladdress" placeholder="Enter School Address">
             </div>
             <div class="mb-3">
@@ -164,29 +185,93 @@
             <input type="text" name="relation" class="form-control" id="relation" placeholder="Enter Relationship">
         </div>
         </div>
-        <div class="col-4">
+        <div class="col-4" id="guardian_infor">
             <h3>Guardian/Parent Information</h3>
+            <div class="mb-3">
+                <label for="g_fullname" class="form-label">Full Name</label>
+                <input type="text" name="g_fullname" class="form-control" id="g_fullname" placeholder="Enter Full Name">
+            </div>
+            <div class="mb-3">
+            <label for="appli_relation" class="form-label">Relationship to Applicant</label>
+            <input type="text" name="appli_relation" class="form-control" id="appli_relation" placeholder="Enter your relationship">
+            </div>
+            <div class="mb-3">
+            <label for="g_contact" class="form-label">Phone Number</label>
+            <input type="number" name="g_contact" class="form-control" id="g_contact" placeholder="Enter your phone number">
+            </div>
+            <div class="mb-3">
+                <label for="g_email" class="form-label">Email</label>
+                <input type="email" name="g_email" class="form-control" id="g_email" placeholder="Enter email address">
+            </div>
+            <div class="mb-3">
+                <label for="g_occupation" class="form-label">Occupation</label>
+                <input type="text" name="g_occupation" class="form-control" id="g_occupation" placeholder="e.g Doctor/.../Unemployed">
+            </div>
         </div>
-        <div class="col-4">
+        <div class="col-4" id="references_infor">
             <h3>References</h3>
+            <div class="mb-3">
+                <label for="reference" class="form-label">FullName</label>
+                <input type="text" name="reference" class="form-control" id="reference" placeholder="Enter your references' fullname">
+            </div>
+            <div class="mb-3">
+                <label for="reference_school" class="form-label">School</label>
+                <input type="text" name="reference_school" class="form-control" id="reference_school"
+                    placeholder="Enter your references' school">
+            </div>
+            <div class="mb-3">
+                <label for="reference_p" class="form-label">Position</label>
+                <input type="text" name="reference_p" class="form-control" id="reference_p" placeholder="Enter your references' position">
+            </div>
+            <div class="mb-3">
+                <label for="reference_contact" class="form-label">Phone Number</label>
+                <input type="number" name="reference_contact" class="form-control" id="reference_contact" placeholder="Enter your references' phone number">
+            </div>
+            <div class="mb-3">
+                <label for="reference_email" class="form-label">Email</label>
+                <input type="email" name="reference_email" class="form-control" id="reference_email" placeholder="Enter your references' email address">
+            </div>
         </div>
-        <div class="col-4">
+        <div class="col-4" id="upload_documents">
             <h3>Upload Document(s)</h3>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Identification Document</label>
+                <input type="file" name="picture" class="form-control" id="exampleFormControlInput1" required>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Progress Report</label>
+                <input type="file" name="picture" class="form-control" id="exampleFormControlInput1" required>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Transfer Letter</label>
+                <input type="file" name="picture" class="form-control" id="exampleFormControlInput1" >
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Proof of Residence</label>
+                <input type="file" name="picture" class="form-control" id="exampleFormControlInput1" required>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Recommendation Letter</label>
+                <input type="file" name="picture" class="form-control" id="exampleFormControlInput1">
+            </div>
         </div>
     </div>
+    <div class="consent">
     <h3>Consent and Declaration</h3>
-    <div class="form-check">
+    <div class="form-check" style="display: flex; align-items: center; gap: 10px; margin-left: 25px;">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-        <label class="form-check-label" for="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault" style=" color: #799096; font-weight: bold;">
             I certify that all the information provided is true and correct.
         </label>
     </div>
-    <div class="form-check">
+    <div class="form-check" style="display: flex; align-items: center; gap: 10px; margin-left: 25px;">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-        <label class="form-check-label" for="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault" style=" color: #799096; font-weight: bold;">
             I agree to abide by the school <a href="rules and regulations.html" target="Blank">rules and regulations</a> of the school.
         </label>
     </div>
+    </div>
+    <button type="submit">Submit</button>
     </div>
 </body>
 </html>
