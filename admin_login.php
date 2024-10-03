@@ -2,10 +2,10 @@
 session_start();
 
 // Database connection parameters
-$servername = "localhost";  // Assuming you're running XAMPP locally
-$db_username = "root";       // Default XAMPP MySQL username
-$db_password = "";           // Default XAMPP MySQL password (blank)
-$dbname = "school_approval_db"; // Your database name
+$servername = "localhost";
+$db_username = "root";
+$db_password = "";
+$dbname = "school_approval_db";
 
 // Create a connection
 $con = new mysqli($servername, $db_username, $db_password, $dbname);
