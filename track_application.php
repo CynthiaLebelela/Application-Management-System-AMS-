@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_num'])) {
 <body>
     <h1>Track Your Application</h1>
     <form method="POST">
-        <img src="user.svg" alt="track-application icon" style="color: #ECF0F1;">
+        <img src="Images/school_tracking_icon_no_background.webp" alt="track-application icon" style="color: #ECF0F1;">
         <div class="mb-3">
             <input type="text" name="id_num" class="form-control" id="id_num" placeholder="Enter your ID number"
                 required>
