@@ -55,18 +55,51 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="style(1).css" rel="stylesheet" />
     <script src="script.js"></script>
+    <style>
+        h1 {
+            color: #ECF0F1;
+            padding: 10px;
+            margin-top: 80px;
+        }
+
+        .form-group {
+            margin-top: 105px;
+        }
+
+        .form-group label {
+            color: #ECF0F1;
+            font-weight: bold;
+            font-size: 22px;
+        }
+
+        .form-group input {
+            width: 300px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background-color: #369481;
+            border: none;
+        }
+
+        .btn:hover {
+            background-color: #1ABC9C;
+        }
+    </style>
 </head>
 
 <body>
-    <form action="forgot_password.php" method="POST">
-        <div class="form-group">
-            <img src="Images/school_tracking_icon_no_background">
-            <label for="email">Enter your email:</label>
-            <input type="email" class="form-control" name="email" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Reset Password</button>
-    </form>
-
+    <center>
+        <h1>Reset Password</h1>
+        <form action="forgot_password.php" method="POST">
+            <div class="form-group">
+                <label for="email">Enter your email:</label>
+                <input type="email" class="form-control" name="email" placeholder="Enter your email address" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Reset Password</button>
+        </form>
+    </center>
 </body>
 
 </html>

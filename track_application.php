@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_num'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="style(1).css" rel="stylesheet" />
     <style>
-        h1 {
+        body h1 {
             text-align: center;
             margin-top: 20px;
             margin-bottom: 20px;
@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_num'])) {
 
         .mb-3 input {
             width: 300px;
-            margin-left: 650px;
+            margin-left: 520px;
             margin-top: 140px;
         }
 
@@ -58,7 +58,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_num'])) {
             background-color: #369481;
             color: #ECF0F1;
             font-weight: medium;
-            margin-left: 850px;
+            margin-top: 10px;
+            margin-left: 700px;
             border: none;
             border-radius: 5px;
             padding: 5px;
@@ -67,18 +68,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_num'])) {
         button:hover {
             background-color: #1ABC9C;
         }
-
-        img {
-            width: 300px;
-            margin-left: 20px;
-        }
     </style>
 </head>
 
 <body>
     <h1>Track Your Application</h1>
     <form method="POST">
-        <img src="Images/school_tracking_icon_no_background.webp" alt="track-application icon" style="color: #ECF0F1;">
         <div class="mb-3">
             <input type="text" name="id_num" class="form-control" id="id_num" placeholder="Enter your ID number"
                 required>

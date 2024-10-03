@@ -35,7 +35,11 @@ $result = $con->query("SELECT * FROM applications");
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="style(1).css" rel="stylesheet" />
+    <script src="script.js"></script>
     <title>Admin Dashboard</title>
 </head>
 
