@@ -1,12 +1,13 @@
 <?php
-$servername = "localhost";
-$username = "root";  // Update with your MySQL username
-$password = "";  // Update with your MySQL password
-$dbname = "school_approval_db";
 
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "school_approval_db";
 // Create connection
 $con = new mysqli($servername, $username, $password, $dbname);
 
+// Check connection
 if ($con->connect_error) {
     die("Connection failed: " . $con->connect_error);
 }
@@ -26,10 +27,22 @@ foreach ($uploads as $field) {
 }
 
 // Prepare and bind
-$stmt = $con->prepare("INSERT INTO applications (fullname, dob, gender, ethnicity, id_num, picture, schoolname, schooladdress, recent_grade, grade_applying_for, subject_stream, school_activity, home_address, city, email_address, emergency_name, emergency_number, relation, guardian_fullname, guardian_relation, guardian_contact, guardian_email, guardian_occupation, reference_name, reference_school, reference_position, reference_contact, reference_email, identification_doc, progress_report, transfer_letter, proof_of_residence, recommendation_letter) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+$stmt = $con->prepare("
+    INSERT INTO applications (
+        fullname, dob, gender, ethnicity, id_num, picture, 
+        schoolname, schooladdress, recent_grade, grade_applying_for, subject_stream, 
+        school_activity, home_address, city, email_address, emergency_name, 
+        emergency_number, relation, guardian_fullname, guardian_relation, 
+        guardian_contact, guardian_email, guardian_occupation, reference_name, 
+        reference_school, reference_position, reference_contact, reference_email, 
+        identification_doc, progress_report, transfer_letter, proof_of_residence, 
+        recommendation_letter
+    ) 
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+");
 
 $stmt->bind_param(
-    "ssssssssssssssssssssssssssssssssssssssss",
+    "ssssssssssssssssssssssssssssssss",
     $_POST['fullname'],
     $_POST['dob'],
     $_POST['gender'],
@@ -39,23 +52,23 @@ $stmt->bind_param(
     $_POST['schoolname'],
     $_POST['schooladdress'],
     $_POST['recent_grade'],
-    $_POST['grades'],
-    $_POST['subject'],
+    $_POST['grade_applying_for'],
+    $_POST['subject_stream'],
     $_POST['school_activity'],
     $_POST['home_address'],
     $_POST['city'],
     $_POST['email_address'],
-    $_POST['emargency_name'],
+    $_POST['emergency_name'],
     $_POST['emergency_number'],
     $_POST['relation'],
-    $_POST['g_fullname'],
-    $_POST['appli_relation'],
-    $_POST['g_contact'],
-    $_POST['g_email'],
-    $_POST['g_occupation'],
-    $_POST['reference'],
+    $_POST['guardian_fullname'],
+    $_POST['guardian_relation'],
+    $_POST['guardian_contact'],
+    $_POST['guardian_email'],
+    $_POST['guardian_occupation'],
+    $_POST['reference_name'],
     $_POST['reference_school'],
-    $_POST['reference_p'],
+    $_POST['reference_position'],
     $_POST['reference_contact'],
     $_POST['reference_email'],
     $uploaded_files['identification_doc'] ?? null,
@@ -73,4 +86,4 @@ if ($stmt->execute()) {
 
 $stmt->close();
 $con->close();
-
+?>

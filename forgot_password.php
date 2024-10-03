@@ -1,0 +1,72 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "school_approval_db";
+    // Create connection
+    $con = new mysqli($servername, $username, $password, $dbname);
+
+    // Check connection
+    if ($con->connect_error) {
+        die("Connection failed: " . $con->connect_error);
+    }
+
+    $email = $_POST['email'];
+
+    // Check if email exists in the user database
+    $stmt = $con->prepare("SELECT * FROM admins WHERE email = ?");
+    $stmt->bind_param('s', $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        // Generate a unique token
+        $token = bin2hex(random_bytes(50));
+
+        // Store the token in the password_resets table
+        $stmt = $con->prepare("INSERT INTO password_resets (email, token) VALUES (?, ?)");
+        $stmt->bind_param('ss', $email, $token);
+        $stmt->execute();
+
+        // Send reset link to user's email
+        $reset_link = "http://yourwebsite.com/reset_password.php?token=" . $token;
+        $subject = "Password Reset Request";
+        $message = "Click on this link to reset your password: " . $reset_link;
+        $headers = 'From: no-reply@school_approval_system.com';
+        mail($email, $subject, $message, $headers);
+
+        echo "A password reset link has been sent to your email.";
+    } else {
+        echo "No account found with this email.";
+    }
+
+    $stmt->close();
+    $con->close();
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>School Approval System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="style(1).css" rel="stylesheet" />
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <form action="forgot_password.php" method="POST">
+        <div class="form-group">
+            <img src="Images/school_tracking_icon_no_background">
+            <label for="email">Enter your email:</label>
+            <input type="email" class="form-control" name="email" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Reset Password</button>
+    </form>
+
+</body>
+
+</html>
