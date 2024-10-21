@@ -41,14 +41,65 @@ $result = $con->query("SELECT * FROM applications");
     <link href="style(1).css" rel="stylesheet" />
     <script src="script.js"></script>
     <title>Admin Dashboard</title>
+    <style>
+        button {
+            margin-left: 1250px;
+            margin-top: -180px;
+            padding: 8px;
+            border-radius: 5px;
+            border: NONE;
+            background-color: #369481;
+            color: #ECF0F1;
+        }
+
+        button:hover {
+            color: #d0eff7;
+            background-color: #1ABC9C;
+        }
+
+        h1,
+        h3,
+        th {
+            color: #ECF0F1;
+        }
+
+        h3 {
+            margin-left: 40px;
+        }
+
+        table {
+            margin-left: 80px;
+        }
+
+        th {
+            border-radius: 10px;
+        }
+
+        table tr th {
+            padding: 18px;
+        }
+
+        a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: #d0eff7;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #ECF0F1;
+        }
+    </style>
 </head>
 
-<body>
+<body class="light">
     <h1>Welcome,
         <?php echo $_SESSION['admin']; ?>!
     </h1>
+    <button class="changeTheme" onclick="changeTheme();">Light Mode</button>
     <h3>Applications</h3>
-    <table border="1">
+    <table border="3">
         <tr>
             <th>ID</th>
             <th>Full Name</th>

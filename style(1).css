@@ -63,3 +63,7 @@ body{
 .container .register a:hover {
     color:#d0eff7;
 }
+.light {
+    background-color: antiquewhite;
+    color: black;
+}
