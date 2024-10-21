@@ -1,4 +1,39 @@
 <?php
+// Include PHPMailer
+require 'PHPMailer/src/PHPMailer.php';
+
+// Create a new PHPMailer instance
+$mail = new PHPMailer(true);
+
+try {
+    // SMTP configuration
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com'; // Set the SMTP server to send through
+    $mail->SMTPAuth = true;             // Enable SMTP authentication
+    $mail->Username = 'your-email@gmail.com';   // SMTP username (Gmail address)
+    $mail->Password = 'your-email-password';    // SMTP password (Gmail password or App password)
+    $mail->SMTPSecure = 'tls';            // Enable TLS encryption, 'ssl' also accepted
+    $mail->Port = 587;              // TCP port to connect to
+
+    // Recipients
+    $mail->setFrom('your-email@gmail.com', 'School Approval System');
+    $mail->addAddress($email);     // Add a recipient (the user’s email)
+
+    // Content
+    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = 'Password Reset Request';
+    $mail->Body = 'Click on this link to reset your password: <a href="your-reset-link">Reset Password</a>';
+
+    // Send email
+    if ($mail->send()) {
+        echo 'Email has been sent';
+    } else {
+        echo 'Email could not be sent. Mailer Error: ' . $mail->ErrorInfo;
+    }
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+}
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $servername = "localhost";
     $username = "root";

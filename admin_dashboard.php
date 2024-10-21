@@ -63,20 +63,51 @@ $result = $con->query("SELECT * FROM applications");
             color: #ECF0F1;
         }
 
+        table {
+            border-collapse: collapse;
+            margin-left: 80px;
+            font-size: 18px;
+            min-width: 600px;
+            background-color: #ECF0F1;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        }
+
+        table th,
+        table td {
+            border: 1px solid #d0eff7;
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #1ABC9C;
+            color: white;
+        }
+
+        table tr {
+            background-color: #ECF0F1;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #d0eff7;
+        }
+
+        table tr:hover {
+            background-color: #369481;
+            color: white;
+        }
+
+        table tr:nth-child(even):hover {
+            background-color: #1ABC9C;
+            color: white;
+        }
+
+        .sub {
+            margin-left: 50px;
+        }
+
         h3 {
             margin-left: 40px;
-        }
-
-        table {
-            margin-left: 80px;
-        }
-
-        th {
-            border-radius: 10px;
-        }
-
-        table tr th {
-            padding: 18px;
         }
 
         a {
@@ -99,7 +130,7 @@ $result = $con->query("SELECT * FROM applications");
     </h1>
     <button class="changeTheme" onclick="changeTheme();">Light Mode</button>
     <h3>Applications</h3>
-    <table border="3">
+    <table border="1">
         <tr>
             <th>ID</th>
             <th>Full Name</th>
@@ -115,11 +146,13 @@ $result = $con->query("SELECT * FROM applications");
                     <form method="POST">
                         <input type="hidden" name="application_id" value="<?= $row['id'] ?>">
                         <select name="status">
+                            <option value="action">Select Action</option>
+                            <option value="pending">Pending</option>
                             <option value="accepted">Accept</option>
                             <option value="rejected">Reject</option>
                         </select>
                         <textarea name="reason" placeholder="Rejection reason"></textarea>
-                        <button type="submit">Submit</button>
+                        <button class="sub" type="submit">Submit</button>
                     </form>
                 </td>
             </tr>

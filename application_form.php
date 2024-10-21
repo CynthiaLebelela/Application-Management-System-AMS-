@@ -38,17 +38,17 @@ $stmt = $con->prepare("
         identification_doc, progress_report, transfer_letter, proof_of_residence, 
         recommendation_letter
     ) 
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?)
 ");
 
 $stmt->bind_param(
-    "ssssssssssssssssssssssssssssssss",
+    "sssssssssssssssssssssssssssssssss",
     $_POST['fullname'],
     $_POST['dob'],
     $_POST['gender'],
     $_POST['ethnicity'],
     $_POST['id_num'],
-    $uploaded_files['picture'] ?? null,
+    $uploaded_files['picture'],
     $_POST['schoolname'],
     $_POST['schooladdress'],
     $_POST['recent_grade'],
@@ -71,11 +71,11 @@ $stmt->bind_param(
     $_POST['reference_position'],
     $_POST['reference_contact'],
     $_POST['reference_email'],
-    $uploaded_files['identification_doc'] ?? null,
-    $uploaded_files['progress_report'] ?? null,
-    $uploaded_files['transfer_letter'] ?? null,
-    $uploaded_files['proof_of_residence'] ?? null,
-    $uploaded_files['recommendation_letter'] ?? null
+    $uploaded_files['identification_doc'],
+    $uploaded_files['progress_report'],
+    $uploaded_files['transfer_letter'],
+    $uploaded_files['proof_of_residence'],
+    $uploaded_files['recommendation_letter']
 );
 
 if ($stmt->execute()) {
